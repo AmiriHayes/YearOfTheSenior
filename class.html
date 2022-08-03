@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Hayes Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+    	<header>
+            <div class="logo">
+                <img src="img/devjane.png" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <dim>
+                <div class="topleftTitle">Hayes Homeschool / Portfolio & Classes Page</div>
+            </dim>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="class.html" class="nav__link">Portfolio & Classes</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About Me / Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Introduction -->
+        <section class="intro" id="home">
+           <h1 class="section__title section__title--intro" style = "text-align: left">
+                Year of <strong>The Junior</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Amiri Hayes</p>
+            <a href="index.html" class="intro__img">
+                <img src=" img/finalbooks.png " class="intro__img">
+            </a>
+        </section>
+        
+		<!-- My Classes and Portfolio-->   
+        <section class="section__subtitle section__subtitle--intro_below">
+        <p id = "classes">
+        	See some <b> Homeschool </b>classes I've taken: <br>
+            Last updated: <script> document.write(new Date().toLocaleDateString()); </script> <br><br><br>
+        </p>
+        <ul class="flex-container" id = "classes">
+	        <li class="flex-item__square">
+	            <br><br >
+	            <a href="class_list.html#math" class="class__link"><h2>Math <br> and Coding</h2></a>
+	        </li> 
+	      	<li class="flex-item__square">
+	            <a href="class_list.html#english" class="class__link"><h2>English and Science</h2></a>
+	        </li>  
+	        <li class="flex-item__square">
+	            <a href="class_list.html#other" class="class__link"><h2>Language and <br> All Other</h2></a>
+	        </li> 
+    	</ul>
+    	<p> <br><br id = "projects">
+    		See some of the Projects I've created <br> during my homeschool experience that I'm most proud of: <br> 
+        	<br><br>
+        </p> 
+        <ul class="flex-container" id = "projects">
+            <li class="flex-item__rectangle">
+                <br><h2>My <br> Coding <br> Projects</h2>
+                <h3>_____</h3><br>
+                    <p>Subject: Programming</p>
+                    <p><a href="coding_portfolio.html" class="container_link">See Programming Portfolio</a></p><br>
+                    <p>Description:</p>
+                    <p>So far I've programmed in the language Python and Basic, and made plenty of projects in class. I'm also familiar with Javascript, HTML, CSS and I have worked with C++ for Arduino. </p>
+            </li> 
+            <li class="flex-item__rectangle">
+                <br><h2>My <br> Ongoing <br> Novel</h2>
+                <h3>_____</h3><br>
+                    <p>Subject: English</p>
+                    <p><a href="img/novel2draft1_pg25.pdf" class="container_link">PDF here</a> </p><br>
+                    <p>Description:</p>
+                    <p>Beginning in 2019, I began to write an untitled mystery/thriller novel that I have outlined but am still working on. The PDF to the first twenty-five pages of Draft One are linked above.</p>
+                    <a href=""></a>
+            </li>  
+	        <li class="flex-item__rectangle">
+	            <br><h2>My <br> Art And <br> Animation</h2>
+                <h3>_____</h3><br>
+                	<p>Subject: Film</p>
+                    <p><a href="art_portfolio.html" class="container_link">See Computer Art Portfolio</a></p><br>
+                    <p>Description:</p>
+                    <p>Although I’m more interested in writing and programming than film, I have also tried my hand at animating and 3-D graphics in and out of school as well. You can watch videos <br><a href="https://www.youtube.com/channel/UCq_yFsZsoATrgxQHz2giYyQ/featured" class="container_link">on Youtube here.</a>.</p>
+	        </li> 
+    	</ul>
+        </section>
+
+        <!-- Bottom Section -->
+        <section class="bottom_class">
+        <p><br><br>
+        	Thanks for viewing! <br> See my About Page And Glance at a Portfolio Before you Go.
+        <br><br></p>
+    	</section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__endnote">
+                <p> -- coded by amiri hayes ... end of page content --<p>
+            </div>
+        </footer>
+        
+        <script src="index.js"></script>
+        
+    </body>
+</html>
