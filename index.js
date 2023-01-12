@@ -54,4 +54,14 @@ function clrEds(strIn) {
 }
 
 
+const mediaQuery = window.matchMedia('(max-width: 650px)');
+if (mediaQuery.matches) {
+    educationQuery()
+}
+
+function educationQuery() {
+    document.getElementsByClassName('reading_block1').innerHTML += "Hello JavaScript!";
+    //var ammendment = document.getElementsByClassName('reading_block1');
+    //ammendment.innerHTML += '<p>_</p><p>Textbook: A Primer for Mathematics Competitions,Zawaira & Hitchcock</p>';
+}
 

@@ -10,7 +10,7 @@
 
     </head>
     <!-- Title & Hamburger Menu -->
-    <body>
+    <body class="main_page">
         <header>
             <button class="nav-toggle" aria-label="toggle navigation">
                 <span class="hamburger"></span>
@@ -18,21 +18,20 @@
             <dim>
                 <div class="topleftTitle">Hayes Homeschool / Home Page</div>
             </dim>
-            <nav class="nav">
+            <nav class="nav" id="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="education.html" class="nav__link">Education</a></li>
-                    <li class="nav__item"><a href="work.html" class="nav__link">Work Experience</a></li>
-                    <li class="nav__item"><a href="projects.html" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="research.html" class="nav__link">Research</a></li>
+                    <li class="nav__item red"><a href="education.html" class="nav__link">Education</a></li>
+                    <li class="nav__item orange"><a href="work.html" class="nav__link">Work Experience</a></li>
+                    <li class="nav__item yellow"><a href="projects.html" class="nav__link">Projects</a></li>
+                    <li class="nav__item green"><a href="research.html" class="nav__link">Research</a></li>
                 </ul>
             </nav>
         </header>
 
         <!-- Introduction -->
         <section class="title_sec">
-            <!-- <img src="img_avatar.png" alt="Avatar" class="avatar"> -->
-            <br><h1 class="title">
-                <b>Amiri Hayes</b>
+            <h1 class="title">
+                <p class="dynamic_text"><b>Amiri Hayes.&nbsp;</b></p>
             </h1>
         </section>
 
@@ -45,7 +44,7 @@
             </a>
             <a href="work.html">
                 <div class="column sec2">
-                    <p class="centered"><br>Work Experience</p>
+                    <p class="centered"><br>Work</p>
                 </div>
             </a>
             <a href="projects.html">
@@ -58,30 +57,27 @@
                     <p class="centered"><br>Research</p>
                 </div>
             </a>
-
-     
         </div>
 
         <!-- About me -->
-        <div class="row">
-            <div class="column half1">
+        <div class="row" id="about">
+            <div class="column half1 main_height">
                 <div class="about-me"><br>
-                   <h2 class="title">About me</h2><br>
-                   <div class="about-me__body">
-                    <p>I am Amiri Hayes, a high school student from New Jersey in the Twelth Grade who has been homeschooled since my sophomore year of high school. In the years before this, I attended Bergen County Academies in the Engineering Academy and Maywood Avenue Middle School. My experience with Hayes Homeschool is teaching me plenty of important values and I’m learning a lot of new skills, like improving my ability to learn on my own (which was valuable in helping me make this website). I’ve also learned qualities like persistence, patience, and creativity.
+                   <h2 class="title">About me:</h2><br><br>
+                   <div>
+                    <p>I am Amiri Hayes, a high school student from New Jersey in the Twelth Grade who has been homeschooled since my sophomore year of high school. In the years before this, I attended Bergen County Academies in the Engineering Academy and Maywood Avenue Middle School. My experience with Hayes Homeschool is teaching me plenty of important values and I’m learning a lot of new skills, like improving my ability to learn on my own (which was valuable in helping me make this website). I’ve also learned qualities like persistence, patience, and creativity.</p>
                     <br><br>
-                    I’m also an athlete, as I’ve competed as a diver on the Junior Olympic team at Pike Dive Academy which operates at the New Jersey Institute of Technology. I studied gymnastics for three years and competed in this as well before diving. I also am an endurance athlete as I cycle and run; I’m planing to complete my first marathon before I am 18. Apart from sports, I also spend a lot of time outside listening to music while cruising through the streets of my neighborhood whether it be on a bike, skateboard, or unicycle.
+                    <p>I’m also an athlete, as I’ve competed as a diver on the Junior Olympic team at Pike Dive Academy which operates at the New Jersey Institute of Technology. I studied gymnastics for three years and competed in this as well before diving. I also am an endurance athlete as I cycle and run; I’m planing to complete my first marathon before I am 18. Apart from sports, I also spend a lot of time outside listening to music while cruising through the streets of my neighborhood whether it be on a bike, skateboard, or unicycle.</p>
                     <br><br>
-                    I began programming this website to learn HTML, CSS, and JAVASCRIPT for my Web Design Class in the second marking period of my sophomore year of homeschooling. I was in total control of setting up the school schedule for how I would learn these languages, the tutorials I would follow, and deciding what projects I would make. Hayes Homeschool taught me many things, and autonomy is one of the most important ones I’ve learned so far.<br><br>
-                    </p><br>
+                    <p>I began programming this website to learn HTML, CSS, and JAVASCRIPT for my Web Design Class in the second marking period of my sophomore year of homeschooling. I was in total control of setting up the school schedule for how I would learn these languages, the tutorials I would follow, and deciding what projects I would make. Hayes Homeschool taught me many things, and autonomy is one of the most important ones I’ve learned so far.</p>
+                    <br><br>
                    </div>
                 </div>
             </div>
             <div class="column half2">
-                <br><br>
                 <ul class="interests">
-                    <li class="interest"> Physics & CS Major @ RCSJ</li>
-                    <li class="interest"> 3.94 GPA (President's List) </li>
+                    <li class="interest bold"><b>Physics & CS Major @ RCSJ</b></li>
+                    <li class="interest bold"> 3.95 GPA (President's List) </li>
                     <li class="interest-longer"> 
                         <p class="coursework"> Relevant Coursework: 
                             <br>&emsp; &#8212 Calculus I-III, Differential Equations&nbsp; 
@@ -91,7 +87,7 @@
                         </p>         
                     </li>
                     <li class="interest-long"> 
-                        <b>Currently: Seeking Internships in Financial <br>Technology & Software Engineering</b>
+                        Currently: Seeking Research Experiences for <br>Undergraduates in Computer Science
                     </li>
                 </ul>
             </div>
