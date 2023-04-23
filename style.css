@@ -270,17 +270,14 @@ h3 { font-size: var(--fs-h3) }
 .dynamic_text::after {
     width: 0.125em;
     background: white;
-    animation: typewriter 1s steps(8) 0.75s forwards, 2.5s blink 0.5s steps(1) infinite;;
+    animation: typewriter 1s steps(8) 0.75s forwards, 2.5s blink 0.5s steps(1) infinite;
 }
 @keyframes typewriter {
     to { left: 100%; }
+    to { visibility: none; }
 }
 @keyframes blink {
     50% { background: none; }
-    /*0% {background:white;}
-    50% {background:white;}
-    51% {background: black;}
-    100% {background: black;}*/
 }
 @keyframes typing {
     100%{
