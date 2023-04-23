@@ -265,7 +265,7 @@ h3 { font-size: var(--fs-h3) }
 }
 .dynamic_text::before {
     background: lightgrey;
-    animation: typewriter 1s steps(8) 0.75s forwards;
+    animation: typewriterd 1s steps(8) 0.75s forwards;
 }
 .dynamic_text::after {
     width: 0.125em;
@@ -274,7 +274,12 @@ h3 { font-size: var(--fs-h3) }
 }
 @keyframes typewriter {
     to { left: 100%; }
-    to { visibility: none; }
+}
+@keyframes typewriterd {
+    to { 
+        left: 100%; 
+        width: 0%;
+    }
 }
 @keyframes blink {
     50% { background: none; }
