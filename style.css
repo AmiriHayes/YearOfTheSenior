@@ -226,6 +226,9 @@ h3 { font-size: var(--fs-h3) }
         font-size: 110%;
         left: 20px;
     }
+    .dissappear {
+        display: none;
+    }
 }
 
 /* Introduction section */
@@ -517,7 +520,7 @@ h3 { font-size: var(--fs-h3) }
     text-align: left;
 }
 .coursework {
-    margin: 5% 7.25%;
+    margin: 2.5% 7.5%;
 }
 
 /*Extra Information Pages*/
@@ -641,6 +644,9 @@ h3 { font-size: var(--fs-h3) }
         list-style-type: none;
         width: 100%;     
     }
+    .coursework {
+        margin: 5% 7.25%;
+    }
 }
 
 /*Work Section*/
@@ -682,19 +688,19 @@ h3 { font-size: var(--fs-h3) }
 }
 .progress .progress__bar1 {
   height: 100%;
-  width: 70%;
+  width: 90%;
   background-color: #EC8537;
   animation: fill-bar ease-out 2s;
 }
 .progress .progress__bar2 {
   height: 100%;
-  width: 55%;
+  width: 70%;
   background-color: #EC8537;
   animation: fill-bar ease-out 2s;
 }
 .progress .progress__bar3 {
   height: 100%;
-  width: 45%;
+  width: 60%;
   background-color: #EC8537;
   animation: fill-bar ease-out 2s;
 }
