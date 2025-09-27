@@ -860,6 +860,11 @@ h3 { font-size: var(--fs-h3) }
     height: fit-content; 
     text-decoration: none;
   }
+.columnr a {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
 .rs_title {
     width: 100%;
     color: #02C245;
