@@ -1,0 +1,15 @@
+# blogs/_quarto.yml
+project:
+  type: website
+  output-dir: _site
+  render: 
+    - "*.qmd"
+    - "!_quarto.yml"
+    
+website:
+  title: "Amiri Hayes' Blog"
+
+format:
+  html:
+    theme: sandstone
+    css: [styles.css]

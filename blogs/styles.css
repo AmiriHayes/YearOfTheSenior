@@ -1,0 +1,10 @@
+:root {
+  --bs-link-color: #66728d; 
+}
+a {
+  color: var(--bs-link-color) !important;
+}
+a:hover {
+  --bs-link-color: #8c9ace; /* Lighten the color on hover */
+  color: var(--bs-link-color) !important;
+}
