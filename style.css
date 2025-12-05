@@ -134,8 +134,10 @@ h3 { font-size: var(--fs-h3) }
 .orange { color: #EC8537; }
 .yellow { color: #EEDD41; }
 .green { color: #02C245; }
+.pink { color: #ffa7cf}
 .black { color: black; }
 .white { background-color: white; }
+
 
 /* Top Left Title */
 .topleftTitle{
@@ -342,6 +344,9 @@ h3 { font-size: var(--fs-h3) }
     .column {
         width: 100%;
     }
+    .delete {
+        display: none;
+    }
 }
 
 /* Background Section */
@@ -355,7 +360,7 @@ h3 { font-size: var(--fs-h3) }
     display: flex;
     width: 40%;
     background-color: black;
-    padding-top: 25px;
+    /* padding-top: -60px; */
 }
 .main_page {
     background-color: black;
@@ -364,12 +369,12 @@ h3 { font-size: var(--fs-h3) }
     .half1 {
         padding: 1em;
         width: 100%;
-        min-height: 875px;
+        min-height: 600px;
     }
     .half2 {
         padding-top: 0px;
         width: 100%;
-        height: 675px;
+        height: 650px;
     }
 }
 

@@ -21,7 +21,7 @@ listing:
 <div style="text-align: center; margin-top: 20px;">
 [$\leftarrow$ Back Home](https://www.amirihayes.com)
 </div>
-<div style="text-align: center; margin-bottom: 25px;">
+<div style="text-align: center; margin-bottom: 25px; display: flex;">
 # Blog Posts
 </div>
 
