@@ -1,7 +1,7 @@
 # blogs/_quarto.yml
 project:
   type: website
-  output-dir: _site
+  output-dir: articles
   render: 
     - "*.qmd"
     - "!_quarto.yml"

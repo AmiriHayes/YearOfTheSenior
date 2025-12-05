@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Amiri Hayes">
-<meta name="dcterms.date" content="2025-12-05">
-<meta name="description" content="some thoughts about learning new things">
 
-<title>Depth vs Breadth in Developing Expertise – Amiri Hayes’ Blog</title>
+<title>Amiri Hayes’ Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e83117e711fad372bcb8c8022997a9a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e83117e711fad372bcb8c8022997a9a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,9 +68,67 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../styles.css">
+    const options = {
+      valueNames: ['listing-image','listing-title','listing-description','listing-author','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="fullcontent quarto-light">
@@ -83,116 +140,73 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Depth vs Breadth in Developing Expertise</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">learning</div>
-    <div class="quarto-category">research</div>
-    <div class="quarto-category">productivity</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    some thoughts about learning new things
-  </div>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Amiri Hayes </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 5, 2025</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
 
 
-</header>
+<style>
+/* Target the title of each item in the listing */
+.listing-title {
+    /* Increase the space below the title */
+    margin-bottom: 20px !important; 
+    /* Use !important to ensure this overrides any default Quarto styling */
+}
 
 
-<hr>
-<div style="text-align: center; margin-bottom: -15px;">
-[5-minute read]
-</div>
+</style>
 <div style="text-align: center; margin-top: 20px;">
-<p><a href="../index.html">See Other Blogs</a></p>
+<p><a href="https://www.amirihayes.com"><span class="math inline">\(\leftarrow\)</span> Back Home</a></p>
 </div>
-<p><br></p>
-<p>placeholder</p>
-<!---
-In the journey toward becoming a true expert, one of the first strategic choices we face is the path we take: **Depth** (tunnelling into a single specialization) or **Breadth** (exploring a wide range of fields). While often presented as an "either/or" choice, the most effective approach usually involves a strategic balance.
+<section id="blog-posts" class="level1" style="text-align: center; margin-bottom: 25px; display: flex;">
+<h1>Blog Posts</h1>
+</section>
+<div id="blog-listing">
 
-### 1. The Power of Deep Specialization
-
-Deep expertise is the hallmark of the dedicated specialist. It involves spending a concentrated amount of time mastering a narrow field, becoming the "go-to" person for specific, complex problems.
-
-* **Advantages of Depth:**
-    * **Problem-Solving:** Allows you to tackle intractable, highly complex issues that generalists cannot touch.
-    * **Market Value:** Deep specialists often command higher salaries due to the scarcity of their skill set.
-    * **Innovation:** True domain innovation usually comes from those who understand the existing landscape intimately enough to see new possibilities.
-
-* **Pitfalls of Depth:**
-    * **Fragility:** You are vulnerable to shifts in your specific market or technology. If your narrow skill set becomes obsolete, pivoting can be difficult.
-    * **Myopia:** A deep focus can sometimes lead to a lack of perspective, causing you to overlook solutions from adjacent fields.
-
-### 2. The Resilience of Broad Generalization
-
-A broad understanding, or T-shaped expertise (deep in one area, shallow in many), allows you to connect disparate ideas and communicate across different domains.
-
-* **Advantages of Breadth:**
-    * **Adaptability:** Broad exposure makes it easier to pivot careers or learn new skills as technology evolves.
-    * **Creativity:** Many major breakthroughs come from *combinational creativity*—applying a solution from one field to a problem in another.
-    * **Communication:** Generalists are essential in leadership roles, acting as translators between different technical and non-technical teams.
-
-* **Pitfalls of Breadth:**
-    * **Perceived Shallowness:** Without a single deep expertise, you may struggle to be recognized as an "expert" by those focused purely on technical skill.
-    * **Jack-of-All-Trades Trap:** Spreading yourself too thin can lead to low competence across all fields, making it hard to deliver significant value.
-
-### 3. Finding the Strategic Balance (T-Shaped Model)
-
-The modern consensus favors the **T-shaped model of expertise**: acquiring deep knowledge in one or two core areas (the vertical bar of the T) while maintaining a broad, foundational understanding of adjacent or related disciplines (the horizontal bar).
-
-The key is to use your breadth to inform your depth. For example, a deep learning engineer (Depth) who also understands basic psychology and human-computer interaction (Breadth) can design far more effective user experiences.
-
-**Actionable Steps:**
-1.  **Start Deep:** Establish one area where you are undeniably competent—this gives you professional leverage.
-2.  **Explore Broadly:** Dedicate time each week to learning basic principles from unrelated fields (e.g., a programmer learning philosophy, a marketer learning basic statistics).
-3.  **Cross-Pollinate:** Actively look for ways to apply your broad knowledge to the problems in your deep specialty.
-
-***
-
--->
-<div style="text-align: center; margin-top: 20px;">
-<p><strong>want to be notified for the next blog?</strong></p>
-<form style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
-<input type="email" placeholder="Enter your email address" name="email" required="" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 250px;"> <button type="submit" style="padding: 8px 15px; background-color: #4c61afff; color: white; border: none; border-radius: 4px; cursor: pointer;"> Submit </button>
-</form>
 </div>
-<!---
- <div style="text-align: center; margin-top: 20px;">
- [$\leftarrow$ Back Home](https://www.amirihayes.com)
- </div>
--->
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="bGVhcm5pbmclMkNyZXNlYXJjaCUyQ3Byb2R1Y3Rpdml0eQ==" data-listing-date-sort="1764910800000" data-listing-file-modified-sort="1764903476756" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="550">
+<div class="thumbnail"><a href="./1/depth_vs_breadth.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./1/depth_vs_breadth.html" class="no-external">Depth, Breadth and Learning</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('bGVhcm5pbmc='); return false;">learning</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmVzZWFyY2g='); return false;">research</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHJvZHVjdGl2aXR5'); return false;">productivity</div>
+
+</div>
+<div class="delink listing-description"><a href="./1/depth_vs_breadth.html" class="no-external">
+<p>some thoughts about learning new things</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./1/depth_vs_breadth.html" class="no-external">
+<div class="listing-date">
+Dec 5, 2025
+</div>
+<div class="listing-author">
+Amiri Hayes
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

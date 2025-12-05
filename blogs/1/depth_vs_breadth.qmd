@@ -1,5 +1,5 @@
 ---
-title: "Depth vs Breadth in Developing Expertise"
+title: "Depth, Breadth and Learning"
 author: "Amiri Hayes"
 date: "2025-12-05"
 categories: [learning, research, productivity]
@@ -55,16 +55,20 @@ The key is to use your breadth to inform your depth. For example, a deep learnin
 3.  **Cross-Pollinate:** Actively look for ways to apply your broad knowledge to the problems in your deep specialty.
 
 ***
-
 -->
 
 <div style="text-align: center; margin-top: 20px;">
-**want to be notified for the next blog?**
+want to be notified for the next blog?
 
-<form style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
+<form 
+name="blog-signup" 
+method="POST" 
+data-netlify="true"
+style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;"
+>
 <input 
 type="email" 
-placeholder="Enter your email address" 
+placeholder="Enter your email address"
 name="email" 
 required
 style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 250px;"
@@ -74,6 +78,7 @@ Submit
 </button>
 </form>
 </div>
+
 
 <!---
  <div style="text-align: center; margin-top: 20px;">
