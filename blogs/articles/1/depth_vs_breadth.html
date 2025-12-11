@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Amiri Hayes">
-<meta name="dcterms.date" content="2025-12-05">
+<meta name="dcterms.date" content="2025-12-10">
 <meta name="description" content="some thoughts about learning new things">
 
 <title>Depth, Breadth and Learning – Amiri Hayes’ Blog</title>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -92,6 +121,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-category">learning</div>
     <div class="quarto-category">research</div>
     <div class="quarto-category">productivity</div>
+    <div class="quarto-category">software</div>
   </div>
   </div>
 
@@ -114,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 5, 2025</p>
+      <p class="date">December 10, 2025</p>
     </div>
   </div>
   
@@ -128,62 +158,80 @@ ul.task-list li input[type="checkbox"] {
 
 <hr>
 <div style="text-align: center; margin-bottom: -15px;">
-[5-minute read]
+[10-minute read]
 </div>
 <div style="text-align: center; margin-top: 20px;">
 <p><a href="../index.html">See Other Blogs</a></p>
 </div>
 <p><br></p>
-<p>placeholder</p>
+<p>I’ve recently been thinking about the importance of clearly defining your approach when learning new things. The <strong>hardest part of learning something new is probably trying to start</strong>, which may largely be because once you’ve committed to the act of deciding to learn something, you next have to decide: <strong>how?</strong></p>
+<p>There are a lot of strategies and research related to learning new things, including things like active learning and spaced repetition. But when it comes to developing expertise, one paradigm feels particularly relevant to my recent efforts to try and improve my ability to learn. That’s <strong>Depth</strong> and <strong>Breadth</strong>.</p>
+<ul>
+<li><strong>Depth </strong> | I’m defining as: time spent learning some particular specialization or working towards solving some particular problem.</li>
+<li><strong>Breadth</strong> | I’m defining as: time spent learning the fundamentals of work done in some domain or understanding the set of solutions to problems in a domain.</li>
+</ul>
+<p>I wrote this to sort out my thoughts, categorize my historical efforts, and hopefully hear other thoughts and approaches.</p>
+<hr>
+<section id="starting-out-with-breadth" class="level3">
+<h3 class="anchored" data-anchor-id="starting-out-with-breadth">Starting Out with Breadth</h3>
+<p>When I first started out in my <a href="https://drive.google.com/file/d/1r-q1p8PiqFpZYEnzSZ0NY4bx-gR_w-Re/view?usp=sharing">journey</a> to see how you can use computers to solve problems in 2023, I approached it with the goal of developing <strong>breadth</strong>. Since my goal was so broad, there were a variety of directions I could approach it from.</p>
+<p>I decided to designate each month to gaining knowledge in an area of software engineering I was interested in: - <strong>January:</strong> Web Development Basics - <strong>February &amp; March:</strong> Frontend and Backend Development - <strong>April:</strong> Database Systems - <strong>May:</strong> Machine Learning. This way, I was able to get a breadth of introductory experiences by following along with tutorials and binging course lectures. As a complete beginner, this massive influx of breadth was really helpful for going from knowing nothing about all of these topics to <strong>knowing something</strong> (and in my opinion, knowing something is infinitely better than knowing nothing, because then you have stuff to work with).</p>
+<p>Broadly continuing this pursuit of knowledge has served me well as a start to many projects, but it is insufficient alone. As I started to work on bigger projects in research and for fun in these domains, I started to get a better sense of the true importance of breadth, beyond introductory experiences in a variety of domains.</p>
+<p>For example, one thing I learned from my experience conducting research at MIT last summer is that sometimes the most valuable thing that you can bring to a project isn’t the ability to solve an engineering problem the fastest, but the ability to <strong>think broadly and creatively bridge ideas from different areas</strong> to change how you start thinking about the problem in the first place. This was a recurring theme from my mentors who I could tell drew from a variety of previous experiences to come up with creative ideas. This view differed from my original introduction to breadth as something required to get your foot in the door.</p>
+<blockquote class="blockquote">
+<p>To me, that’s the beauty of breadth: the emergent capability to contextualize a problem and develop solutions that either haven’t been thought of, or solutions that frame the problem in a new light.</p>
+</blockquote>
+<p>Having a breadth of knowledge and valuable experiences eventually builds a unique new vantage point for you, on which it’s easier to see what <em>should</em> exist but doesn’t and come up with cool ideas. That said, once you can come up with those new solutions, someone <em>usually</em> has to do the work of implementing your awesome solutions and in practice, that person is often you.</p>
+<hr>
+</section>
+<section id="going-deep" class="level3">
+<h3 class="anchored" data-anchor-id="going-deep">Going Deep</h3>
+<p>How efficiently could you teach a middle schooler algebra? Identify a bug in a Python function? Diagnose a medical condition or negotiate a multi-million-dollar contract? These things don’t just benefit from a breadth of experience, but from <strong>depth</strong> in particular. Knowledge from having worked in that exact domain and deeply understood the previous solutions and approaches makes it way easier to buckle down and complete the task.</p>
+<p>I can think of plenty of other examples where depth is useful. To give another example from MIT, picture this: I was one week in to the summer had just started trying to figure out what code I’d need to write to start answering my research question. After some more talking to my mentor about beginning to code things, they decided to boot up their code editor and have us talk through some implementation details while we pair-coded some ideas. Afterwaards, the <strong>40 lines of code they wrote in about twenty minutes</strong> was the base of the entire project I implemented. They didn’t have to ask what python libraries to use, how to frame the research question, how to scope the function, which math concepts were relevant to the potential solutions, or why approaching our goal this way was best. I don’t know for sure, but my guess is that having a <strong>depth of experience</strong> from a career answering questions like this is how they were able to get me started so quickly.</p>
+<p>Putting in your 10,000 hours is good for mastery, but won’t automatically produce innovation unless your practice reflects that desire. However, going to the lengths to combine <strong>mastery (depth)</strong> with <strong>purposeful exploration (breadth)</strong> is definitely a winning recipe for innovation.</p>
+<hr>
+</section>
+<section id="the-weighted-balance" class="level3">
+<h3 class="anchored" data-anchor-id="the-weighted-balance">The Weighted Balance</h3>
+<p>Clearly, breadth and depth are both important, so you should definitely optimize for them both when improving your knowledge base, right? I think that’s true (reach out to me if you know for sure!), but in practice, it’s been nontrivial prioritizing both endeavors in my day-to-day life.</p>
+<p>Usually, when it’s time to work on a project, that’s what I do: I work on the project and continue working on the project. Eventually, after some sweat, I’ve either successfully or unsuccessfully completed the project. Either way, the project is completed, and part of the <strong>value I’ve attained from the endeavor</strong> is that <strong>I have learned how to finish the project</strong>.</p>
+<p>However, in that model of approaching problems, there’s no room for learning about things that are not obviously (or directly) related to the project but would still improve my approach and completion of the project. After all, there will be future projects and future problems, and I should optimize for my ability to complete those too.</p>
+<p>In practice, I’ve tried a couple of things to find this balance:</p>
+<ol type="1">
+<li>In 2023, when I started from a breadth-first perspective of learning about the different things you can do with computers (e.g., web development, data engineering, machine learning), I followed a lot of tutorials and courses, but made sure to include large <strong>non-tutorial projects (like this website)</strong> as cornerstones to demonstrate my understanding. This helped me work towards depth.</li>
+<li>When I started from a depth-first perspective this past September and made a project tracking site to catalog my progress on research projects, I made sure to keep a broader list of topics and papers I came across so that I can work on <strong>all these related topics </strong> I find in the course of my project and document my progress on these breadth-related concepts in between project work as well.</li>
+</ol>
+<p>While both of these approaches to prioritizing breadth and depth of knowledge work well in theory, one thing I’ve come to realize for me is that both approaches are difficult to maintain because of <strong>context switching</strong>. Context switching is generally difficult for humans because it requires us to break focus and shift gears. I hypothesize that context switching is particularly difficult when switching from breadth-focused to depth-focused endeavors, or vice versa, as they very often seem <strong>orthogonal</strong>.</p>
+<ul>
+<li>For example, if you are focusing on completing a table for a woodworking project using traditional joinery, then why would you stop making progress to improve your knowledge of computer-aided design and laser cutting?</li>
+<li>If you are using a Python library for data exploration on a small dataset and have found the functions that you need for your problem, why would you next decide to research the implementation of the other functions and capabilities of the library?</li>
+</ul>
+<p>It’s easy to accept that in the long-term, working towards both of these tasks is helpful, but in the short-term, switching tasks feels backwards and impractical.</p>
+<p>For right now, my main conclusion about this topic is that you don’t need to balance depth and breadth perfectly, but <strong>attempting to include both into your learning intentionally</strong> and recognizing that they might almost always initially seem contradictory is crucial.</p>
+<p>There are three main things [1] that I’m going to try and focus on for improving my ability to gain both a breadth and depth of knowledge, so I can (colloquially speaking) get a deeper bag and be better at pulling from it.</p>
+<ol type="1">
+<li>Prioritize blocking out my time proportionally for breadth-focused vs.&nbsp;depth-focused tasks, depending on what needs to get done that day. <strong>Use rituals when task-switching</strong> to build stronger associations between the switch, so it’s easier to keep focus and the overall goal in mind.</li>
+<li>Get into the habit of prioritizing both <strong>breadth-focused</strong> and <strong>depth-focused</strong> tasks in my routines, making it easier by keeping a list of breadth tasks and topics most relevant to my major project. I also plan to <strong>mentally weight</strong> particular direction each session, so that I know which one I want to work towards the most at any given time.</li>
+<li><strong>Keeping track of my progress</strong> and reasons for doing breadth-focused tasks (e.g., writing down why I am diverting focus from a particular project to practice some semi-related concept or read some semi-related paper in a notebook or in my codebase and how this act may be useful in the future).</li>
+</ol>
+<blockquote class="blockquote">
+<p>[1] Most of the three actionable thoughts are inspired by suggestions from <em>Deep Work</em> by Cal Newport and <em>Atomic Habits</em> by James Clear.</p>
+</blockquote>
+<hr>
+<p>That’s the end of the first article, thanks for reading! If you liked it, check back in around a month from now for a new one.</p>
 <!---
-In the journey toward becoming a true expert, one of the first strategic choices we face is the path we take: **Depth** (tunnelling into a single specialization) or **Breadth** (exploring a wide range of fields). While often presented as an "either/or" choice, the most effective approach usually involves a strategic balance.
-
-### 1. The Power of Deep Specialization
-
-Deep expertise is the hallmark of the dedicated specialist. It involves spending a concentrated amount of time mastering a narrow field, becoming the "go-to" person for specific, complex problems.
-
-* **Advantages of Depth:**
-    * **Problem-Solving:** Allows you to tackle intractable, highly complex issues that generalists cannot touch.
-    * **Market Value:** Deep specialists often command higher salaries due to the scarcity of their skill set.
-    * **Innovation:** True domain innovation usually comes from those who understand the existing landscape intimately enough to see new possibilities.
-
-* **Pitfalls of Depth:**
-    * **Fragility:** You are vulnerable to shifts in your specific market or technology. If your narrow skill set becomes obsolete, pivoting can be difficult.
-    * **Myopia:** A deep focus can sometimes lead to a lack of perspective, causing you to overlook solutions from adjacent fields.
-
-### 2. The Resilience of Broad Generalization
-
-A broad understanding, or T-shaped expertise (deep in one area, shallow in many), allows you to connect disparate ideas and communicate across different domains.
-
-* **Advantages of Breadth:**
-    * **Adaptability:** Broad exposure makes it easier to pivot careers or learn new skills as technology evolves.
-    * **Creativity:** Many major breakthroughs come from *combinational creativity*—applying a solution from one field to a problem in another.
-    * **Communication:** Generalists are essential in leadership roles, acting as translators between different technical and non-technical teams.
-
-* **Pitfalls of Breadth:**
-    * **Perceived Shallowness:** Without a single deep expertise, you may struggle to be recognized as an "expert" by those focused purely on technical skill.
-    * **Jack-of-All-Trades Trap:** Spreading yourself too thin can lead to low competence across all fields, making it hard to deliver significant value.
-
-### 3. Finding the Strategic Balance (T-Shaped Model)
-
-The modern consensus favors the **T-shaped model of expertise**: acquiring deep knowledge in one or two core areas (the vertical bar of the T) while maintaining a broad, foundational understanding of adjacent or related disciplines (the horizontal bar).
-
-The key is to use your breadth to inform your depth. For example, a deep learning engineer (Depth) who also understands basic psychology and human-computer interaction (Breadth) can design far more effective user experiences.
-
-**Actionable Steps:**
-1.  **Start Deep:** Establish one area where you are undeniably competent—this gives you professional leverage.
-2.  **Explore Broadly:** Dedicate time each week to learning basic principles from unrelated fields (e.g., a programmer learning philosophy, a marketer learning basic statistics).
-3.  **Cross-Pollinate:** Actively look for ways to apply your broad knowledge to the problems in your deep specialty.
-
-***
+<div style="text-align: center; margin-top: 20px;">
+    ##### Want to be notified for the next blog?
+    
+    [$\leftarrow$ Back to Blog Home](../index.html)
+</div>
 -->
-<!---
- <div style="text-align: center; margin-top: 20px;">
- [$\leftarrow$ Back Home](https://www.amirihayes.com)
- </div>
--->
+<div style="text-align: center; margin-top: 20px;">
+<a href="https://www.amirihayes.com"><span class="math inline">\(\leftarrow\)</span> Back Home</a>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
