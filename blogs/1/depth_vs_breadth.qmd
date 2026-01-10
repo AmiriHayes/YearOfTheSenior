@@ -103,12 +103,12 @@ That’s the end of the first article, thanks for reading! If you liked it, chec
 -->
 
 <!---
- <div style="text-align: center; margin-top: 20px;">
- [$\leftarrow$ Back Home](https://www.amirihayes.com)
- </div>
- -->
+<div style="text-align: center; margin-top: 20px;">
+[$\leftarrow$ Back Home](https://www.amirihayes.com)
+</div>
+-->
 
- <div style="text-align: center; margin-top: 20px;">
+<div style="text-align: center; margin-top: 20px;">
 <p><strong>want to be notified for the next blog?</strong></p>
 <form id="subscribe-form" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
 <input type="email" id="email-input" placeholder="Enter your email address" name="email" required="" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 250px;"> 
@@ -133,6 +133,8 @@ document.getElementById('subscribe-form').onsubmit = async (e) => {
 };
 </script>
 
+<!---
 <div style="text-align: center; margin-top: 20px;">
     [$\leftarrow$ Back to Blog Home](../index.html)
 </div>
+-->
