@@ -1,0 +1,110 @@
+---
+title: "Playing with Numbers"
+description: "from middle school arithmetic to spatiotemporal inference"
+categories: [math, research, learning]
+author: "Amiri Hayes"
+date: "2026-01-30"
+---
+***
+<div style="text-align: center; margin-bottom: -15px;">[10-minute read]</div>
+<div style="text-align: center; margin-top: 20px;">
+[See Other Blogs](../index.html)
+</div>
+<br>
+
+### Preamble
+
+Numbers are interesting to me. Growing up, I’d spend a lot of time thinking about how you could come up with better tricks for adding them, multiplying them, seeing which ones factored into others, and how to figure out which were primes. They were just *fun* to play with. However, I remember in middle school algebra, I realized that math was about more than just simple operations; it was a world **dictated by axioms and expressed in imaginative ways** to build crazy stuff. From machine learning to computer graphics and structural engineering, there was a joint language to describe it all.
+
+As an undergraduate, I’ve leaned further into those fundamental topics and tried to better understand the logic that underlies what we call math. Still, I find myself fascinated by the basics: playing with numbers and using them to represent and model things in the world. I love seeing how our models and the real world interact. In this article, I want to share three mathematical models I've used in research as I’ve gained a better understanding of how to use numbers to bring structure to the world.
+
+---
+
+### Graphs
+
+The first real data structure I learned about was the graph. To be clear, I don't mean the *plots* or *charts* you might be thinking of. In a mathematical sense, **a graph** 
+
+$$
+G = (V, E)
+$$
+
+is a set or collection of vertices (nodes) and edges (the connections between them) that describes a system. As abstractions that represent how things relate to one another, you can find them *anywhere* and everywhere if you look at the world from a certain perspective. For example, the **six degrees of separation theory** suggests that any two people on Earth are, on average, six or fewer social connections apart. This idea can be modeled as a graph where individuals are nodes and people who know each other are connected with edges. Slightly more mathematically, you could have an "adjacency list" where each person in the graph (which represents the world in this case) has a list of all the people they know. Then the claim is that, starting at any person's list and following their connections, you can reach any other person in the whole graph in six steps or fewer.
+
+As the first solo research project I undertook, I tried to see how it was possible to rank transportation methods (e.g. walking, biking, driving) in a city using math. Conveniently, cities have intersections and roads, which makes it pretty easy to model them as graphs. Just think of all the intersection points as nodes and the roads connecting them as edges. The main idea behind my project was when you take the different edge labels (highways and other roads for cars only, pedestrian paths, bike lanes, sidewalks, etc.) as well as mode-specific factors (rain, crime, aesthetic appeal) into account, you can come up with numerically backed and holistic scores for how easy it is for people to get around a city.
+
+Graphs felt like a revelation because they allowed me to map out complex systems. One other graph project I worked on was my independent study last semester focused on **Text Attributed Graphs (TAGs)**, where instead of people or intersections as nodes, you have documents. This is a pretty powerful idea, especially in the age of large language models (LLMs) and information retrieval, because TAGs allow us to model relationships between documents based not just on their connections but also on their content. That project focused on seeing all the different ways you could represent the same underlying system with a different graph, and quantifying the benefits of these different representations.
+
+Think about your own life. In addition to just your social circle and the social circles of people you know, you also have online interactions, shared interests, and mutual friends. Even more insular, consider your days. Consider your daily routine as a graph where each activity is a node and the transitions between them are edges. By analyzing this graph, you might find patterns in your behavior, like which activities lead to increased productivity or relaxation. Graphs help us see the interconnectedness of larger systems by representing complex things as a set of numerical relationships.
+
+---
+
+### Time Series
+
+Even before I matriculated to NJIT, I knew I wanted to do research. The semester before I started, I emailed math professors blindly, and one responded. Before I knew it, I was joining meetings with her grad student, who mentored me in their work applying time series towards figuring out how to classify objects at the bottom of the ocean.
+
+**A time series** is essentially a sequence of data points over time: 
+
+$$
+X = \{x_1, x_2, x_3, \dots, x_t\}. 
+$$
+
+Following them sequentially is like watching a *video* of how something changes over time.
+
+For example, if you were tracking the daily temperature in your city over a month, you would have a time series where each data point represents the temperature on a specific day. Or if you were monitoring your heart rate during exercise, each data point would represent your heart rate at different time intervals. Related to my NJIT project, here's a question: how could you differentiate whether time series $T1 = \{0.05, 0.02, 0.06, 0.08, 0.01\}$ and $T2 = \{0.03, 0.07, 0.04, 0.09, 0.02\}$ were radar results from looking at the same sediment or different sediments (e.g. T1 is the result of pointing a radar gun at granite and T2 is the result of pointing a radar gun at sandstone)? At first glance, they seem different because of their values. But if you look closer, you might notice that both series have similar peaks and troughs or just similar overall ranges and trends. Additionally, if you had a bunch of additional time series data, it might be even more complex to figure out how to differentiate between the two types.
+
+This first experience with time series was daunting. For one thing, there was a lot of data. The series were much longer than the examples above and there were thousands of readings. Each one was the result of radar data, where each timestamp corresponded to a radar reading of the ocean floor. I was dealing with real-world data, a massive codebase, and the inherent difficulty of inference for the task. It wasn't clean like a textbook problem but shadowing the graduate student and working on basic pieces of the puzzle alongside him helped me get my feet wet and *see the value* of time series analysis.
+
+Now, as a spring intern at Brookhaven National Lab (BNL) in New York, things have come full circle. I’m working on inference again but now for **spatiotemporal data**. We aren't just looking at data at a single point in time; we are looking at 3D data representing physical space and trying to predict how it will *evolve* over time. Specifically, we're trying to predict cold fronts using 3D temperature data and improve forecasting models so we can better understand whether it will rain or snow, and this is only possible by analyzing large amounts of spatiotemporal data. The same foundational logic of time series I learned in a project about predicting what's on the ocean floor is being applied to predicting weather patterns.
+
+---
+
+###  Matrices
+
+Then there are matrices. In my first linear algebra class, I felt like I was just going through the motions, learning about abstract topics like eigenvalues and determinants because I had to. But these conceptual, often non-obvious laws kept *popping* up in every single project I touched. In fact, in practice, the two previous models I discussed (graphs and time series) are often represented using matrices.
+
+Mathematically, **a matrix** is just a rectangular array of numbers:
+
+$$
+A = \begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} 
+\end{bmatrix}
+$$ 
+
+They can be any size, they don't have to be squares, and the numbers inside can represent anything. One can even replace the numbers with more complex objects, like functions or lists. Matrices are the ultimate way to organize numbers and a pretty cool example of one of Einstein's famous quotes: "Everything should be made as simple as possible, but not simpler."
+
+Like so many other things in the sciences, operations on matrices are the backbone of modern machine learning. When I started my summer research internship at MIT last year, I was thrown into the deep end of understanding how large language models (LLMs) work. At their core, LLMs are just massive matrices of numbers where many of the entries represent **learned weights** from training on huge datasets. These matrices are manipulated through a series of **linear transformations** (multiplications and additions) to then generate text, answer questions, and perform various tasks. What *surprised* me at the time was how much the theory I learned in linear algebra class directly applied to my research of how these models functioned. For instance, abstract concepts like "basis spaces" and "vector projections" were crucial for understanding how LLMs "attend" to different parts of the input sentences via matrix operations when generating responses.
+
+Seeing these abstract concepts manifest in my quest to better understand the architecture of a model as complex as an LLM was a turning point for me, as here was a point where both the numbers themselves and the theory behind these mathematical representations were *deeply intertwined*. This experience reinforced why I find math so compelling; math builds on itself. One of the beautiful things about the field is that this theorizing of random thoughts, like how to multiply things or find primes, leads to important insights. The more deeply you understand those basic insights, the more deeply you can work towards building your own. 
+
+## Conclusion
+
+I admittedly just wrote this because I think numbers are cool. But as I move through my research, from NJIT to MIT and now to BNL, one potential conclusion might be that it’s often your most basic interests that materialize into the foundation of everything you aspire to improve at. For me, whether it's a list of timestamps, a web of social connections, or a massive grid of LLM weights, it's all just ordered lists of numbers. By bringing order to and understanding those numbers (just like I was trying to do aimlessly as a kid), my goal now is to see how we can bring structure to the world.
+
+***
+
+<div style="text-align: center; margin-top: 20px;">
+<p><strong>want to be notified for the next blog?</strong></p>
+<form id="subscribe-form" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
+<input type="email" id="email-input" placeholder="Enter your email address" name="email" required="" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 250px;"> 
+<button type="submit" style="padding: 8px 15px; background-color: #4c61afff; color: white; border: none; border-radius: 4px; cursor: pointer;"> Submit </button>
+</form>
+<p id="status-msg" style="margin-top: 10px; font-size: 14px;"></p>
+</div>
+
+<script>
+document.getElementById('subscribe-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email-input').value;
+  const status = document.getElementById('status-msg');
+  
+  const res = await fetch('https://year-of-the-senior-amirihayes-projects.vercel.app/api/subscribe', {
+    method: 'POST',
+    body: JSON.stringify({ email })
+  });
+
+  status.innerText = res.ok ? "Success!" : "Error. Try again.";
+  if (res.ok) document.getElementById('email-input').value = '';
+};
+</script>
