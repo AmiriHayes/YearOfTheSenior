@@ -75,12 +75,17 @@ document.getElementById('subscribe-form').onsubmit = async (e) => {
   const email = document.getElementById('email-input').value;
   const status = document.getElementById('status-msg');
   
-  const res = await fetch('https://year-of-the-senior-amirihayes-projects.vercel.app/api/subscribe', {
-    method: 'POST',
-    body: JSON.stringify({ email })
-  });
-
-  status.innerText = res.ok ? "Success!" : "Error. Try again.";
-  if (res.ok) document.getElementById('email-input').value = '';
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbwiLfowDjs9RnqImj8XScuidlj9evB-UFI1IQmCFFhPerQulgeP1Y62BYyLgkG--it6/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ email })
+    });
+    status.innerText = "Success!";
+    document.getElementById('email-input').value = '';
+  } catch (err) {
+    status.innerText = "Error. Try again.";
+  }
 };
 </script>
