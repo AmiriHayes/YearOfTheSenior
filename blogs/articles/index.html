@@ -274,7 +274,38 @@ Amiri Hayes
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+
+<div style="text-align: center; margin-top: 20px;">
+<p><strong>want to be notified for the next blog?</strong></p>
+<form id="subscribe-form" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
+<input type="email" id="email-input" placeholder="Enter your email address" name="email" required="" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 250px;">
+<button type="submit" style="padding: 8px 15px; background-color: #4c61afff; color: white; border: none; border-radius: 4px; cursor: pointer;"> Submit </button>
+</form>
+<p id="status-msg" style="margin-top: 10px; font-size: 14px;"></p>
+</div>
+
+<script>
+document.getElementById('subscribe-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email-input').value;
+  const status = document.getElementById('status-msg');
+
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbwiLfowDjs9RnqImj8XScuidlj9evB-UFI1IQmCFFhPerQulgeP1Y62BYyLgkG--it6/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ email })
+    });
+    status.innerText = "Success!";
+    document.getElementById('email-input').value = '';
+  } catch (err) {
+    status.innerText = "Error. Try again.";
+  }
+};
+</script>
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
