@@ -350,16 +350,23 @@ h3 { font-size: var(--fs-h3) }
 }
 
 /* Background Section */
+#about {
+    display: flex;
+    flex-wrap: wrap;
+}
 .half1 {
     display: flex;
     width: 60%;
     background-color: white;
-    height: fit-content;
+    height: auto;
+    margin: 0;
 }
 .half2 {
     display: flex;
     width: 40%;
+    height: auto;
     background-color: black;
+    margin: 0;
     /* padding-top: -60px; */
 }
 .main_page {
@@ -469,6 +476,11 @@ h3 { font-size: var(--fs-h3) }
     margin-right: 2.5%;
     border-width: 5px;
     font-size: 1.2em;
+}
+@media (min-width: 1600px) {
+    .about-me > div {
+        line-height: 2.1;
+    }
 }
 
 .about-me b {

@@ -4,6 +4,7 @@ description: "my recent thoughts after bringing some projects to completion"
 categories: [productivity, education]
 author: "Amiri Hayes"
 date: "2026-05-21"
+draft: true
 ---
 
 ### Preamble
