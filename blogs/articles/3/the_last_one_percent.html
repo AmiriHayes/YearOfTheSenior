@@ -8,9 +8,9 @@
 
 <meta name="author" content="Amiri Hayes">
 <meta name="dcterms.date" content="2026-05-21">
-<meta name="description" content="my recent thoughts after bringing some projects to completion.">
+<meta name="description" content="my recent thoughts after bringing some projects to completion">
 
-<title>The Last One Percent (OUTLINE) – Amiri Hayes’ Blog</title>
+<title>Finishing the Last 1% – Amiri Hayes' Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -87,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Last One Percent (OUTLINE)</h1>
+<h1 class="title">Finishing the Last 1%</h1>
   <div class="quarto-categories">
     <div class="quarto-category">productivity</div>
     <div class="quarto-category">education</div>
@@ -96,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    my recent thoughts after bringing some projects to completion.
+    my recent thoughts after bringing some projects to completion
   </div>
 </div>
 
@@ -127,44 +127,65 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="preamble" class="level3">
 <h3 class="anchored" data-anchor-id="preamble">Preamble</h3>
-<ul>
-<li><strong>The Pareto Principle (The 80/20 Rule):</strong> Introduce the idea that the first 80% of a project takes 20% of the time, while the final 20%—and truly, the last 1%—demands an asymmetric amount of energy, discipline, and attention to detail.</li>
-<li><strong>The Nature of Sprints:</strong> Frame the post around the concept of the “final sprint” across three massive milestones that hit all at once this month: closing out a national lab internship, submitting a year-long research project to top-tier AI conferences, and graduating from college.</li>
-</ul>
+<p>There is a common rule of thumb in software and research known as the <a href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto Principle</a>: the idea that 80% of a project’s results come from 20% of the effort. What I think is less obvious about the remaining 20% (and particularly that final 1%) is that it demands an asymmetric amount of energy, discipline, and attention to detail. In the phase where an idea transitions from an internal prototype into something capable of standing up to external scrutiny, every decision you made flippantly in the first 80% of your project comes back to haunt you and analysis paralysis is a real risk to finishing up strong.</p>
+<p>This month, that reality hit me all at once. I found myself navigating the closing stretch of three major milestones simultaneously: finishing my spring internship at Brookhaven National Laboratory, rushing to polish a year-long research project to for my first AI conference submission, and preparing to walk across the stage for my undergraduate graduation. Each required a distinct final sprint, but looking back at them reveals how differently that last 1% can manifest depending on what you are trying to complete. In this post, I wanted to catalog some reflections on these final pushes.</p>
 <hr>
 </section>
 <section id="part-13-bnl-granularity-for-the-final-5" class="level3">
 <h3 class="anchored" data-anchor-id="part-13-bnl-granularity-for-the-final-5">Part 1/3: BNL ~ Granularity for the Final 5%</h3>
+<p>My time at BNL working in the climate department was a noticeable change of pace from standard academic research and my previous experiences in machine learning. It was a structured, consistent 40-hour work week where I helped co-manage a project divided into three distinct phases. The core task was spatiotemporal time series inference: analyzing 3D physical atmosphere data as it evolves over time to be able to more accurately detect cold fronts with limited sensors.</p>
+<p>Working on climate data taught me that even when dealing with massive datasets, the quality of downstream machine learning tasks relies entirely on understanding the physical phenomenon at the most granular level, down to the exact minute an event occurs. I had to put myself in the shoes of a meteorologist and ended up often looking minute by minute through some time series data which spanned over a year of collected data even after implementing my statical and machine learning methods.</p>
+<pre><code>[Stage 1: Identification] ──&gt; [Stage 2: Visualization] ──&gt; [Stage 3: ML Inference]
+Sliding Window Statistics - Composite &amp; Correlation Plots  -  Cold Front Detection</code></pre>
+<p>Because of this, I spent my final 5% of time at BNL semi-obsessively refining the first two stages of our pipeline rather than rushing to tweak the model architectures in the third step. An abridged description of the three stages of the project were:</p>
 <ul>
-<li><strong>Structure and Management:</strong> Contrast the structured, consistent 40-hour work week at BNL with the more chaotic nature of academic research. Detail the hands-on management style and the value of co-managing a project divided into three distinct phases.</li>
-<li><strong>The Phenomenon to the Minute:</strong> Discuss the realization that even when working with massive climate datasets, the quality of downstream ML tasks relies entirely on understanding the phenomena at the lowest, most granular level.</li>
-<li><strong>Perfecting the Pipeline:</strong> Explain how the last 5% of the internship was spent obsessively perfecting the first two stages to guarantee the success of the third:
-<ul>
-<li><em>Stage 1:</em> Cold front identification via sliding window statistical measures.</li>
-<li><em>Stage 2:</em> Visualization and understanding through composite plus correlation plots (allowing for precise, small-scale timing adjustments).</li>
-<li><em>Stage 3:</em> Anomaly detection utilizing softmax regression from ground truth.</li>
-</ul></li>
+<li><strong>Stage 1:</strong> Identifying cold front events via sliding window statistical measures.</li>
+<li><strong>Stage 2:</strong> Generating composite and correlation plots to visualize the weather dynamics, allowing us to make precise, micro-scale timing adjustments to event boundaries.</li>
+<li><strong>Stage 3:</strong> Anomaly detection utilizing softmax regression trained on verified ground truth.</li>
 </ul>
+<p>This gave me first-hand experience with <a href="https://www.alextamkin.com/essays/openai-takeaways">“data-ing”</a>, a concept I learned about related to OpenAI’s development of models like GPT-3, where painstaking focus on baseline data design proved more critical than excessive tweaks to the language modeling design itself. I learned that ensuring the inputs and event labels were near perfect in Stages 1 and 2 guaranteed the success of the ML inference in Stage 3. This was a lot of work but a good reminder about discipline starting at the foundation of an endeavor.</p>
 <hr>
 </section>
 <section id="part-23-mit-the-marathon-and-the-sprint" class="level3">
 <h3 class="anchored" data-anchor-id="part-23-mit-the-marathon-and-the-sprint">Part 2/3: MIT ~ the Marathon and the Sprint</h3>
-<ul>
-<li><strong>The Horizon of a Long-Scale Project:</strong> Look back at a project with a much wider timescale (stretching since June of last year), marked by months of floating ideas, pivoting research questions, and rebuilding prototypes before the final submission to the ICML Mechanistic Interpretability workshop and NeurIPS.</li>
-<li><strong>The Pareto Rebuild:</strong> Tie back to the opening principle. Explain how months of varied approaches left a fragmented codebase. The final 1% required completely rebuilding the core library from scratch using a single, unified strategy for program synthesis (strict prompt structures, refinement loops, and curated examples).</li>
-<li><strong>The Final Gating Item:</strong> Detail the pressure of having to wait for this foundational code rebuild to finish before executing the ultimate experiments: analyzing the downstream effects of replacing real LLM internal activations with the synthesized Python program outputs.</li>
-</ul>
+<p>In contrast to the structured schedule at BNL, my research with MIT was a long-scale marathon. I had been working on the project since June 2025 with months of floating ideas, shifting research questions, and testing prototypes before targeting my first AI conference submission. We were focused on understanding LLM internal representations by using program synthesis to generate clean Python code proxies for attention matrices.</p>
+<p>After nearly a year of work, the final two weeks before the deadline turned into an intense sprint due to code debt. Months of exploring different approaches had left our codebase fragmented. To complete the project, we had to execute a “Pareto rebuild.” We archived the patchwork of historical scripts and rebuilt our core library from scratch using a single, unified strategy for program synthesis locking down strict prompt templates, refinement loops, and curated examples.</p>
+<p>This rebuild became the final gating item. Everything else from running our final experiments to editing the final manuscript and making sure our figures were aesthetic had to wait until the core foundation was clean and unified. The last 1% here was about taking a step back to rebuild, ensuring the empirical results were built on solid ground with a clear narrative.</p>
 <hr>
 </section>
 <section id="part-33-graduation-an-inflection-point" class="level3">
 <h3 class="anchored" data-anchor-id="part-33-graduation-an-inflection-point">Part 3/3: Graduation — An Inflection Point</h3>
-<ul>
-<li><strong>Looking Back at the Foundation:</strong> Connect the current graduation milestone to the 8-semester sprint in high school that resulted in three Associate Degrees (Physics, Computer Science, and Mathematics)—a relentless, max-credit pace through summers and winters that left you exhausted.</li>
-<li><strong>Moving Past the Finish Line:</strong> Address the perspective of family and friends who suggest celebrating accomplishments more. Pivot this into a personal defense of the trait: not dwelling on wins means you don’t dwell on failures either.</li>
-<li><strong>The 1% Left:</strong> Describe the shift as the final weeks turned to days, and the days turned to the night before the ceremony. Instead of a technical sprint, the final 1% was intentionally spent resting, building a custom fixed-gear bicycle, skating, and spending time with loved ones.</li>
-<li><strong>The Shift from Learning to Creating:</strong> Introduce the word <strong>inflection</strong>—the transition from a desire to simply learn to a desire to <em>create</em> as the BS/MS program comes to an end. Contrast the sprints of four years ago (focused on passing tests) with the sprints of today (focused on building interesting, original things).</li>
-<li><strong>Conclusion:</strong> Note that while these experiences look different on the surface, they differ only in structure, not in their fundamental nature. Express excitement for the next technical sprints ahead this summer at IBM Research and while wrapping up the Master’s degree next semester.</li>
-</ul>
+<p>Then came graduation. Reaching the end of my undergraduate studies made me reflect on the foundation that brought me here. Before starting at NJIT, I went through an 8-semester sprint in only two years to complete three Associate Degrees in Physics, Computer Science, and Mathematics. That was a relentless, max-credit push through summers and winters that left me pretty tired at the end. Then at NJIT, pursuing the BS/MS and Honors program simultaneously was slightly less intense but still a sprint at times.</p>
+<p>My family often tells me I should pause and celebrate accomplishments more as I’m not very big on celebrating these milestones. But I have always appreciated this trait in myself because I think a mindset that prevents you from dwelling on success is the same mindset that prevents you from dwelling on failure. Regardless of the external circumstances, you can just appreciate the work and the lessons and move on to the next challenges where you’ll be a little bit better than before.</p>
+<p>As the final weeks turned to days, and the 5% left became 1%, the nature of the sprint shifted. Instead of pulling all-nighters or grinding through code, I spent my final days before graduating resting, putting together a new fixed gear bike from parts I bought at the Brooklyn Bike Jumble, and just relaxing.</p>
+<p>I’d like to think this last month marked an <strong>inflection point</strong> in my academic path where I can transition from a improving at learning and absorbing, to improving my ability to create. My sprints four years ago were about proving I could pass tests and do well on coursework. My sprints today are about building original tools, proving research hypotheses, and trying to create things that did not exist before (and that people might actually care about).</p>
+<p>While these three conclusions looked slightly different on the surface, writing this outlines their pretty similar theme. Bring a resolution to an endeavor in all cases required having a strong baseline and revisiting those foundations towards the end, in order to make sure that conclusion was built from the same great ideas that initated the journey in the first place. This is something I’ll take with me this summer to IBM Research and as I wrap up my Master’s degree next semester.</p>
+<hr>
+<div style="text-align: center; margin-top: 20px;">
+<p>
+<strong>Want to be notified for the next blog?</strong>
+</p>
+<form id="subscribe-form" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
+<input type="email" id="email-input" placeholder="Enter your email address" name="email" required="" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 250px;"> <button type="submit" style="padding: 8px 15px; background-color: #4c61afff; color: white; border: none; border-radius: 4px; cursor: pointer;"> Submit </button>
+</form>
+<p id="status-msg" style="margin-top: 10px; font-size: 14px;">
+</p>
+</div>
+<script>
+document.getElementById('subscribe-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email-input').value;
+  const status = document.getElementById('status-msg');
+  
+  const res = await fetch('https://year-of-the-senior-amirihayes-projects.vercel.app/api/subscribe', {
+    method: 'POST',
+    body: JSON.stringify({ email })
+  });
+
+  status.innerText = res.ok ? "Success!" : "Error. Try again.";
+  if (res.ok) document.getElementById('email-input').value = '';
+};
+</script>
 
 
 </section>
